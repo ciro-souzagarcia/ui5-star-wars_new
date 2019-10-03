@@ -1,0 +1,55 @@
+<mvc:View 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	controllerName="ovly.star_wars.controller.View1"  
+	displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<!--<Input id="identificador" placeholder="ID do personagem" value="1"/>-->
+						<!--<Button text="Buscar" icon="sap-icon://search" press="onPressBuscar"/>-->
+						<!--<SearchField id="identificador" placeholder="ID do personagem" value="1" search="onPressBuscar"/>-->
+						<Slider id="identificador" min="1" max="50" change="onPressBuscar"/>
+						<form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="form0">
+							<!--<form:content>-->
+								<core:Title text="Title" id="title0"/>
+								<Label text="Nome"/>
+								<Input value="{/name}" />
+								<Label text="Altura"/>
+								<Input value="{/height}"/>
+								<Label text="Olhos"/>
+								<Input value="{/eye_color}"/>
+								
+								<core:Title text="Filmes"/>
+								<Label text="Lista de Filmes"/>
+								<!--<Select id="select" items="{/films}">-->
+								<!--	<items>-->
+								<!--		<core:Item text="{}"/>-->
+								<!--	</items>-->
+								<!--</Select>	-->
+								<List items="{/films}">
+									<items>
+										<CustomListItem>
+											<Link href="{}" text="{}" target="_blank" />
+										</CustomListItem>
+									</items>
+								</List>
+							<!--</form:content>-->
+						</form:SimpleForm>
+					</content>
+					<footer>
+						<Bar id="bar0">
+							<contentMiddle>
+								<Button xmlns="sap.m" text="Documentação" icon="sap-icon://message-information" press="onPressDocs"/>
+							</contentMiddle>
+						</Bar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
